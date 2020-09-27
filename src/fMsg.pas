@@ -1,4 +1,7 @@
 unit fMsg;
+{
+  FormuÃ¡rio principal do programa
+}
 
 interface
 
@@ -59,7 +62,6 @@ uses
   StrUtils,
   DateUtils,
   ShellAPI,
-//  utils_richedit,
   utils_shell,
   utils_strfun;
 {$R *.dfm}
@@ -91,7 +93,7 @@ begin
   begin
     if Self.Showing then
     begin
-      StatusLBL.Caption:=' Desapareço em '+IntToStr(SecondsBetween(now,TimeToClose))+' segundos';
+      StatusLBL.Caption:=' Desapareï¿½o em '+IntToStr(SecondsBetween(now,TimeToClose))+' segundos';
     end;
   end;
   if (FTimeToClose<now) then
@@ -201,12 +203,12 @@ begin
   StatusLBL.Visible:=false;
   Self.Caption:=FDef_Caption;
 
-  // BallonFlags: Informa o tipo do balão que o Ã­cone vai exibir
-  // BallonHint: A mensagem que o balão exibir
+  // BallonFlags: Informa o tipo do balï¿½o que o Ã­cone vai exibir
+  // BallonHint: A mensagem que o balï¿½o exibir
   // BallonTimeout: O tempo que ele ficar exibido em milisegundos
-  // BallonTitle: Tí­tulo da mensagem
+  // BallonTitle: Tï¿½ï¿½tulo da mensagem
   // Icon: Icone a ser exibido
-  // Visible: se será mostrado ou não.
+  // Visible: se serï¿½ mostrado ou nï¿½o.
   TrayIcon1.BalloonFlags:=bfInfo;
   TrayIcon1.IconIndex:=0;
   TrayIcon1.Visible:=true;
@@ -221,19 +223,19 @@ begin
   Memo_Msg.Lines.Add(
     'Este programa serve para exibir mensagens na tela, geralmente usado com scripts '+
     '(bat/cmd/vbs/...) para exibir mensagens na tela.'+sLineBreak+
-    'Através de um parametro -C também é possivel definir a duração em segundos que a mensagem '+
-    'deverá desaparecer.');
-  Memo_Msg.Lines.Add('As opções disponíveis são:');
-  Memo_Msg.Lines.Add('-DEL=Apaga o arquivo após a exibição ');
+    'Atravï¿½s de um parametro -C tambï¿½m ï¿½ possivel definir a duraï¿½ï¿½o em segundos que a mensagem '+
+    'deverï¿½ desaparecer.');
+  Memo_Msg.Lines.Add('As opï¿½ï¿½es disponï¿½veis sï¿½o:');
+  Memo_Msg.Lines.Add('-DEL=Apaga o arquivo apï¿½s a exibiï¿½ï¿½o ');
   Memo_Msg.Lines.Add('-MSG=Mensagem Texto ');
-  Memo_Msg.Lines.Add('   A mensagem a ser exibida, se ela for de até 120 caracteres será exibida no system tray do Windows.');
+  Memo_Msg.Lines.Add('   A mensagem a ser exibida, se ela for de atï¿½ 120 caracteres serï¿½ exibida no system tray do Windows.');
   Memo_Msg.Lines.Add('-I=Arquivo ou -INPUT=Arquivo');
-  Memo_Msg.Lines.Add('   A mensagem a ser exibida será carregada a partir de um arquivo definido.');
-  Memo_Msg.Lines.Add('   São aceitos arquivos .TXT ou .RTF.');
+  Memo_Msg.Lines.Add('   A mensagem a ser exibida serï¿½ carregada a partir de um arquivo definido.');
+  Memo_Msg.Lines.Add('   Sï¿½o aceitos arquivos .TXT ou .RTF.');
   Memo_Msg.Lines.Add('-C=Titulo da janela ou -CAPTION=Titulo da Janela');
   Memo_Msg.Lines.Add('   A Mensagem ou texto a ser exibido como titulo da janela.');
   Memo_Msg.Lines.Add('-T=TempoSegundos ou -TIME=TempoSegundos');
-  Memo_Msg.Lines.Add('  Autofecha a janela após a quantidade de segundos que for definida.');
+  Memo_Msg.Lines.Add('  Autofecha a janela apï¿½s a quantidade de segundos que for definida.');
   // Parametros
   L:=TStringList.Create;
   GetApp_Params(L, true);
